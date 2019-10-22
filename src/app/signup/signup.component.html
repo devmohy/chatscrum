@@ -12,7 +12,7 @@
     <div class="form-group">
         <label>Fullname</label>
         <input type="text" required name="fullname" class="form-control" [class.is-invalid]="fullname.invalid && fullname.touched" #fullname="ngModel" [(ngModel)]='scumUserModel.fullname'>
-        <small class="text-danger" [class.d-none]="fullname.valid || fullname.untouched">Email is required</small>
+        <small class="text-danger" [class.d-none]="fullname.valid || fullname.untouched">Fullname is required</small>
     </div>
     
     <div class="form-group">
@@ -26,10 +26,11 @@
 
     <div class="form-group">
         <label>User Type</label>
-        <select class="custom-select" name="usertype" [(ngModel)]='scumUserModel.usertype'>
-          <option selected>I am signing up as</option>
+        <select required class="custom-select" name="usertype" [class.is-invalid]="usertype.invalid && usertype.toucheds" [(ngModel)]='scumUserModel.usertype' #usertype="ngModel">
+          <option selected></option>
           <option *ngFor = "let type of userTypes">{{ type }}</option>
         </select>
+        <small class="text-danger" [class.d-none]="usertype.valid || usertype.untouched">User Type is required</small>
     </div>
 
     <button class="btn btn-primary" type="submit">Create User</button>
