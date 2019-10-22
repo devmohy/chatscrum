@@ -26,7 +26,7 @@
 
     <div class="form-group">
         <label>User Type</label>
-        <select required class="custom-select" name="usertype" [class.is-invalid]="usertype.invalid && usertype.toucheds" [(ngModel)]='scumUserModel.usertype' #usertype="ngModel">
+        <select required class="custom-select" name="usertype" [class.is-invalid]="usertype.invalid && usertype.touched" [(ngModel)]='scumUserModel.usertype' #usertype="ngModel">
           <option selected></option>
           <option *ngFor = "let type of userTypes">{{ type }}</option>
         </select>
